@@ -7,3 +7,9 @@ output: html_document
 
 hw1data <- read.csv(file="/Users/Jess/Documents/Documents/MSEB/Q3 Winter/Epi 560 Consulting/hw1data.csv",head=TRUE, sep= ",")
 hw1data
+library(tableone)
+CreateTableOne(data = hw1data)
+##vector of variables to summarize
+myvars <- c("group", "sex", "race", "age", "weight", "height")
+##vector of categorical variables that need transformation
+catVars <- c("group", "sex", "race")
