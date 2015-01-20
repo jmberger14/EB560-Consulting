@@ -18,3 +18,7 @@ tablev2 <- CreateTableOne(vars = myvars, data = hw1data, factorVars = catVars)
 tablev2
 ##show all levels of categorical vars
 print(tablev2, showAllLevels = TRUE)
+##stratify table by treatment group
+tablev3 <- CreateTableOne(vars = myvars, strata = "group", data = hw1data, factorVars = catVars)
+tablev3
+print(tablev3, showAllLevels = TRUE)
