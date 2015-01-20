@@ -10,3 +10,11 @@ hw1data
 library(tableone)
 CreateTableOne(data = hw1data)
 
+##vector of variables to summarize
+myvars <- c("group", "sex", "race", "age", "weight", "height")
+##vector of categorical variables that need transformation
+catVars <- c("group", "sex", "race")
+##create a TableOne using this info
+tablev2 <- CreateTableOne(vars = myvars, data = hw1data, factorVars = catVars)
+tablev2
+
