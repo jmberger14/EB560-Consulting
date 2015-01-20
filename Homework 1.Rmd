@@ -5,10 +5,15 @@ date: "January 19, 2015"
 output: html_document
 ---
 
+```{r}
 hw1data <- read.csv(file="/Users/Jess/Documents/Documents/MSEB/Q3 Winter/Epi 560 Consulting/hw1data.csv",head=TRUE, sep= ",")
 hw1data
+```
+```{r}
 library(tableone)
 CreateTableOne(data = hw1data)
+```
+```{r}
 ##vector of variables to summarize
 myvars <- c("group", "sex", "race", "age", "weight", "height")
 ##vector of categorical variables that need transformation
@@ -16,16 +21,25 @@ catVars <- c("group", "sex", "race")
 ##create a TableOne using this info
 tablev2 <- CreateTableOne(vars = myvars, data = hw1data, factorVars = catVars)
 tablev2
+```
+```{r}
 ##show all levels of categorical vars
 print(tablev2, showAllLevels = TRUE)
+```
+```{r}
 ##stratify table by treatment group
 tablev3 <- CreateTableOne(vars = myvars, strata = "group", data = hw1data, factorVars = catVars)
 tablev3
 print(tablev3, showAllLevels = TRUE)
+```
+```{r}
 ##remove group from list of myvars as it is redundant
 myvars2 <- c("sex", "race", "age", "weight", "height")
 ##create table using updated var list
 tablev4 <- CreateTableOne(vars = myvars2, strata = "group", data = hw1data, factorVars = catVars)
 tablev4
 print(tablev4, showAllLevels = TRUE)
+```
+ 
+
 
