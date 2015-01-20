@@ -1,0 +1,11 @@
+---
+title: "EB560 HW1"
+author: "Jessica Berger"
+date: "January 19, 2015"
+output: html_document
+---
+
+hw1data <- read.csv(file="/Users/Jess/Documents/Documents/MSEB/Q3 Winter/Epi 560 Consulting/hw1data.csv",head=TRUE, sep= ",")
+hw1data
+library(tableone) 
+CreateTableOne(data = hw1data)
