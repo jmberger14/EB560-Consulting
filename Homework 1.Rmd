@@ -22,3 +22,10 @@ print(tablev2, showAllLevels = TRUE)
 tablev3 <- CreateTableOne(vars = myvars, strata = "group", data = hw1data, factorVars = catVars)
 tablev3
 print(tablev3, showAllLevels = TRUE)
+##remove group from list of myvars as it is redundant
+myvars2 <- c("sex", "race", "age", "weight", "height")
+##create table using updated var list
+tablev4 <- CreateTableOne(vars = myvars2, strata = "group", data = hw1data, factorVars = catVars)
+tablev4
+print(tablev4, showAllLevels = TRUE)
+
